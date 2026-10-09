@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Margaux Ilunga</title>
+<meta name="description" content="Margaux Ilunga — fashion model and creator, Brooklyn and Paris. Work, digitals, representation and partnerships.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#D5E3EA;
+    --sky-deep:#C3D6DF;
+    --ink:#121820;
+    --mute:#4C5963;
+    --rule:rgba(18,24,32,.2);
+    --lamp:#B9581F;
+    --gutter:clamp(16px,3vw,44px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--sky);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:17px;line-height:1.5;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+  a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1px}
+  a:hover{color:var(--lamp)}
+  .wrap{padding:0 var(--gutter)}
+  .small{font-size:13px;color:var(--mute)}
+  .confirm{color:var(--mute);font-size:13px}
+
+  header .bar{display:flex;justify-content:space-between;align-items:center;height:64px;gap:20px}
+  .who{font-weight:600;font-size:16px;text-decoration:none}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+  nav a{text-decoration:none}
+  @media (max-width:820px){nav li:not(:last-child){display:none}}
+
+  /* hero: name split around a narrow portrait */
+  .hero{display:grid;grid-template-columns:1fr minmax(260px,32vw) 1fr;gap:clamp(16px,2.4vw,36px);min-height:calc(100vh - 64px);padding-bottom:40px}
+  .hero h1{font-variation-settings:"opsz" 96;font-stretch:78%;font-weight:700;font-size:clamp(56px,10.5vw,176px);line-height:.86;letter-spacing:-.035em}
+  .hero .left{display:flex;flex-direction:column;justify-content:space-between;text-align:right}
+  .hero .right{display:flex;flex-direction:column;justify-content:space-between}
+  .hero .right h1{order:2}
+  .hero .portrait{position:relative;overflow:hidden;align-self:stretch;min-height:520px}
+  .hero .portrait img{object-position:58% 40%}
+  .hero .credit{position:absolute;left:10px;bottom:10px;background:rgba(18,24,32,.72);color:#fff;font-size:11px;padding:3px 7px}
+  .intro{font-size:19px;line-height:1.45;max-width:30ch;margin-left:auto}
+  .routes{list-style:none;font-size:15px;max-width:30ch}
+  .routes li{padding:10px 0;border-top:1px solid var(--rule)}
+  .routes li:last-child{border-bottom:1px solid var(--rule)}
+  .routes b{display:block;font-weight:600}
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;min-height:0}
+    .hero .left,.hero .right{text-align:left}
+    .hero .left h1{order:-1}
+    .hero .right h1{order:0;margin-top:-8px}
+    .hero .portrait{order:2;min-height:0;aspect-ratio:4/5}
+    .hero .left{display:contents}
+    .hero .right{display:contents}
+    .intro{margin:0;order:3}
+    .routes{order:4;max-width:none}
+  }
+
+  /* measurement strip */
+  @media (max-width:640px){.measure dl{display:grid;grid-template-columns:repeat(3,1fr);width:100%}.measure div.m{margin-right:0;padding:12px 12px 12px 0;border-right:0;border-bottom:1px solid var(--rule)}.measure div.m:nth-child(n+6){grid-column:span 3}.measure dd{font-size:19px}.unit{width:100%}}
+  .measure{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--sky-deep)}
+  .measure .inner{display:flex;align-items:stretch;flex-wrap:wrap}
+  .measure dl{display:flex;flex:1;flex-wrap:wrap}
+  .measure div.m{padding:16px 22px 16px 0;margin-right:22px;border-right:1px solid var(--rule)}
+  .measure div.m:last-child{border-right:0}
+  .measure dt{font-size:12px;color:var(--mute)}
+  .measure dd{font-size:22px;font-weight:600;line-height:1.2}
+  .unit{display:flex;align-items:center;gap:0;padding:12px 0}
+  .unit button{font:inherit;font-size:13px;background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;color:var(--ink)}
+  .unit button + button{border-left:0}
+  .unit button[aria-pressed="true"]{background:var(--ink);color:var(--sky)}
+  .unit button:focus-visible{outline:2px solid var(--lamp);outline-offset:2px}
+
+  section{padding:88px 0}
+  .sh{display:grid;grid-template-columns:1fr 2fr;gap:24px;margin-bottom:36px;align-items:end}
+  .sh h2{font-variation-settings:"opsz" 96;font-stretch:78%;font-weight:700;font-size:clamp(40px,5.4vw,80px);line-height:.9;letter-spacing:-.03em}
+  .sh p{max-width:52ch;color:var(--mute)}
+  @media (max-width:760px){.sh{grid-template-columns:1fr}}
+
+  /* work */
+  .work{list-style:none;border-top:1px solid var(--ink)}
+  .work li{display:grid;grid-template-columns:70px 120px 1fr 1fr auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--rule)}
+  .work .yr{font-size:14px;color:var(--mute)}
+  .work .crop{width:120px;height:80px;overflow:hidden}
+  .work .client{font-weight:600;font-size:22px;line-height:1.15}
+  .work .kind{color:var(--mute);font-size:15px}
+  .work .cr{font-size:13px;color:var(--mute);text-align:right}
+  @media (max-width:760px){
+    .work li{grid-template-columns:90px 1fr;gap:4px 16px}
+    .work .crop{grid-row:1/4;width:90px;height:110px}
+    .work .yr{grid-column:2}
+    .work .cr{text-align:left}
+  }
+
+  /* digitals */
+  .digs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .dig{aspect-ratio:3/4;background:#E6EEF2;border:1px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;padding:14px;font-size:14px}
+  .dig b{font-weight:600}
+  .dig .ph-ph{flex:1;margin:14px 0;border:1px dashed var(--rule);display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:12px;text-align:center;padding:8px}
+  .dig-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:20px;font-size:15px}
+  @media (max-width:760px){.digs{grid-template-columns:repeat(2,1fr)}}
+
+  /* representation */
+  .rep{list-style:none;border-top:1px solid var(--ink)}
+  .rep li{display:grid;grid-template-columns:1.2fr 1.4fr 1fr;gap:24px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--rule)}
+  .rep .city{font-variation-settings:"opsz" 96;font-stretch:78%;font-weight:700;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.02em}
+  .rep .ag{font-size:18px}
+  .rep .ag small{display:block;font-size:13px;color:var(--lamp);font-weight:600;letter-spacing:.02em}
+  .rep .ct{font-size:15px;text-align:right}
+  @media (max-width:760px){.rep li{grid-template-columns:1fr;gap:4px}.rep .ct{text-align:left}}
+
+  /* partnerships */
+  .partner{background:var(--ink);color:var(--sky)}
+  .partner .sh p{color:#9FB0BA}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #3A4550}
+  .stat{padding:22px 22px 22px 0;border-right:1px solid #3A4550}
+  .stat + .stat{padding-left:22px}
+  .stat:last-child{border-right:0}
+  .stat dd{font-variation-settings:"opsz" 96;font-stretch:78%;font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.02em}
+  .stat dt{font-size:14px;color:#9FB0BA;margin-top:8px}
+  .p-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;padding-top:28px;border-top:1px solid #3A4550}
+  .p-cols h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9FB0BA;margin-bottom:10px}
+  .p-cols p{max-width:44ch}
+  .btn{display:inline-block;margin-top:20px;background:var(--sky);color:var(--ink);text-decoration:none;font-weight:600;padding:14px 22px;font-size:15px}
+  .btn:hover{background:#fff;color:var(--ink)}
+  .partner .confirm{color:#7E8F99}
+  @media (max-width:860px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(3){padding-left:0}.stat:nth-child(n+3){border-top:1px solid #3A4550}.p-cols{grid-template-columns:1fr}}
+
+  /* contact */
+  .contact{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink)}
+  .contact div{padding:32px 32px 32px 0}
+  .contact div + div{border-left:1px solid var(--ink);padding-left:32px}
+  .contact h3{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+  .contact a.big{font-variation-settings:"opsz" 96;font-stretch:78%;font-weight:700;font-size:clamp(26px,3.2vw,46px);line-height:1.05;letter-spacing:-.02em;text-decoration:none;display:block;word-break:break-word}
+  .contact p{margin-top:12px;color:var(--mute);font-size:15px;max-width:40ch}
+  @media (max-width:760px){.contact{grid-template-columns:1fr}.contact div + div{border-left:0;border-top:1px solid var(--ink);padding-left:0}}
+
+  footer{padding:28px 0 60px;font-size:14px;color:var(--mute)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .demo-pill{display:inline-block;margin-right:8px;background:#FF7A00;color:#fff;font-weight:700;font-size:12px;letter-spacing:.08em;padding:3px 9px;border-radius:999px;font-size:10px}
+  .demo-tag{position:fixed;bottom:12px;left:var(--gutter);z-index:30;display:flex;align-items:center;padding-left:4px !important;background:var(--sky);border:1px solid #FF7A00;color:var(--ink);font-size:11px;padding:4px 8px}
+</style>
+</head>
+<body>
+
+
+<div class="demo-tag"><span class="demo-pill">DEMO</span>ThinkFirst Studios · [Your name here]</div>
+
+<header>
+  <div class="wrap bar">
+    <a href="#" class="who">Margaux Ilunga</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#digitals">Digitals</a></li>
+        <li><a href="#representation">Representation</a></li>
+        <li><a href="#partnerships">Partnerships</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="left">
+      <h1>Margaux</h1>
+      <p class="intro">Fashion model and creator. Based in Brooklyn, in Paris most of every show season.</p>
+    </div>
+    <figure class="portrait">
+      <img src="img/hero.jpg" alt="Margaux Ilunga on a rooftop at dusk">
+      <figcaption class="credit">Stock image — not Margaux Ilunga</figcaption>
+    </figure>
+    <div class="right">
+      <ul class="routes">
+        <li><b>Fashion bookings</b><a href="#contact">Station Model Management, New York</a></li>
+        <li><b>Brand partnerships</b><a href="#contact">Linden Creator Management</a></li>
+      </ul>
+      <h1>Ilunga</h1>
+    </div>
+  </div>
+
+  <div class="measure">
+    <div class="wrap inner">
+      <dl id="meas"></dl>
+      <div class="unit" role="group" aria-label="Units">
+        <button type="button" data-u="in" aria-pressed="true">in / US</button>
+        <button type="button" data-u="cm" aria-pressed="false">cm / EU</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sh">
+        <h2>Selected work</h2>
+        <p>Campaigns, covers and the odd runway season. Credits below are placeholders until the real tear sheets come in. <span class="confirm">[CONFIRM]</span></p>
+      </div>
+      <ul class="work">
+        <li><span class="yr">2026</span><div class="crop"><img src="img/hero.jpg" alt="" style="object-position:48% 34%;transform:scale(1.9);transform-origin:46% 38%"></div><span class="client">Maison Arlet</span><span class="kind">FW26 campaign</span><span class="cr">ph. R. Lindqvist</span></li>
+        <li><span class="yr">2026</span><div class="crop"><img src="img/hero.jpg" alt="" style="object-position:50% 50%;transform:scale(2.4);transform-origin:56% 82%"></div><span class="client">Corso Magazine</span><span class="kind">Cover story, issue 12</span><span class="cr">ph. T. Oyelaran</span></li>
+        <li><span class="yr">2025</span><div class="crop"><img src="img/hero.jpg" alt="" style="transform:scale(1.6);transform-origin:20% 70%"></div><span class="client">Paris Fashion Week</span><span class="kind">SS26 — six shows</span><span class="cr">via Station</span></li>
+        <li><span class="yr">2025</span><div class="crop"><img src="img/hero.jpg" alt="" style="filter:grayscale(1) contrast(1.1);transform:scale(1.4);transform-origin:60% 40%"></div><span class="client">Penrose Eyewear</span><span class="kind">E-commerce + social</span><span class="cr">ph. M. Duarte</span></li>
+        <li><span class="yr">2024</span><div class="crop"><img src="img/hero.jpg" alt="" style="transform:scale(1.3);transform-origin:70% 25%"></div><span class="client">Hollis Denim</span><span class="kind">Spring lookbook</span><span class="cr">ph. A. Brennan</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="digitals" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh">
+        <h2>Digitals</h2>
+        <p>Unretouched, natural light, no makeup. What a casting director actually wants to see.</p>
+      </div>
+      <div class="digs">
+        <div class="dig"><b>Front</b><div class="ph-ph">[Digital — supplied by model]</div><span class="small">Oct 2026</span></div>
+        <div class="dig"><b>Profile</b><div class="ph-ph">[Digital — supplied by model]</div><span class="small">Oct 2026</span></div>
+        <div class="dig"><b>Full length</b><div class="ph-ph">[Digital — supplied by model]</div><span class="small">Oct 2026</span></div>
+        <div class="dig"><b>Smile</b><div class="ph-ph">[Digital — supplied by model]</div><span class="small">Oct 2026</span></div>
+      </div>
+      <div class="dig-foot">
+        <a href="#">Download digitals (PDF, 4 pages)</a>
+        <a href="#">Download comp card (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="representation" style="padding-top:0">
+    <div class="wrap">
+      <div class="sh">
+        <h2>Representation</h2>
+        <p>One mother agency, four markets. Book through whoever is closest to the job.</p>
+      </div>
+      <ul class="rep">
+        <li><span class="city">New York</span><span class="ag"><small>Mother agency</small>Station Model Management</span><span class="ct"><a href="#">board@station-mgmt.example</a></span></li>
+        <li><span class="city">Paris</span><span class="ag">[Agency — CONFIRM]</span><span class="ct"><a href="#">[email]</a></span></li>
+        <li><span class="city">Milan</span><span class="ag">[Agency — CONFIRM]</span><span class="ct"><a href="#">[email]</a></span></li>
+        <li><span class="city">London</span><span class="ag">[Agency — CONFIRM]</span><span class="ct"><a href="#">[email]</a></span></li>
+        <li><span class="city">Los Angeles</span><span class="ag">Station Model Management</span><span class="ct"><a href="#">la@station-mgmt.example</a></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="partner" id="partnerships">
+    <div class="wrap">
+      <div class="sh">
+        <h2>Partnerships</h2>
+        <p>A few brand partnerships a season: beauty, denim, travel. The full media kit, with audience split and rates, is available on request.</p>
+      </div>
+      <dl class="stats">
+        <div class="stat"><dd>214K</dd><dt>Instagram followers</dt></div>
+        <div class="stat"><dd>91K</dd><dt>TikTok followers</dt></div>
+        <div class="stat"><dd>140K</dd><dt>Avg. reel views, last 90 days</dt></div>
+        <div class="stat"><dd>71%</dd><dt>Audience aged 18–34</dt></div>
+      </dl>
+      <p class="confirm" style="margin-top:12px">Figures are placeholders. Pull current numbers before publishing. [CONFIRM]</p>
+      <div class="p-cols">
+        <div>
+          <h3>Worked with</h3>
+          <p>Maison Arlet, Penrose Eyewear, Hollis Denim, Low Tide Swim, Corso Magazine. <span class="confirm">[CONFIRM]</span></p>
+          <a class="btn" href="#contact">Request the media kit</a>
+        </div>
+        <div>
+          <h3>Off duty</h3>
+          <p>Co-runs <a href="#">The Coil Fund</a>, small hair-care and confidence grants for teenage girls. Partnerships that give back to it get a yes faster. <span class="confirm">[PLACEHOLDER]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sh">
+        <h2>Contact</h2>
+        <p>Two routes, so your email lands with someone who can say yes.</p>
+      </div>
+      <div class="contact">
+        <div>
+          <h3>Fashion bookings</h3>
+          <a class="big" href="mailto:board@station-mgmt.example">board@station-<wbr>mgmt.example</a>
+          <p>Campaigns, editorial, shows and castings. Station Model Management, New York.</p>
+        </div>
+        <div>
+          <h3>Brand partnerships</h3>
+          <a class="big" href="mailto:margaux@lindencreator.example">margaux@linden<wbr>creator.example</a>
+          <p>Paid social, ambassadorships and media-kit requests. Linden Creator Management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><a href="#">Instagram @margaux.ilunga</a> · <a href="#">TikTok</a></span>
+    <span>© 2026 Margaux Ilunga</span>
+  </div>
+</footer>
+
+<script>
+  // Measurements stored once in inches/US; cm/EU is derived so the two never drift apart.
+  const M = [
+    ["Height", 70, "h"], ["Bust", 32], ["Waist", 24], ["Hips", 35],
+    ["Shoe", 9, "shoe"], ["Hair", "Dark brown, coily"], ["Eyes", "Brown"],
+  ];
+  const fmt = {
+    in: (v, k) => k==="h" ? `5′${v-60}″` : k==="shoe" ? `US ${v}` : v,
+    cm: (v, k) => k==="shoe" ? `EU ${Math.round(v + 31)}` : Math.round(v * 2.54),
+  };
+  function draw(u){
+    document.getElementById("meas").innerHTML = M.map(([l, v, k]) =>
+      `<div class="m"><dt>${l}</dt><dd>${typeof v === "number" ? fmt[u](v, k) : v}</dd></div>`).join("");
+  }
+  document.querySelector(".unit").addEventListener("click", e => {
+    const b = e.target.closest("button"); if(!b) return;
+    document.querySelectorAll(".unit button").forEach(x => x.setAttribute("aria-pressed", x===b));
+    draw(b.dataset.u);
+  });
+  draw("in");
+</script>
+</body>
+</html>
